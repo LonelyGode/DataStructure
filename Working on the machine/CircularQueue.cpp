@@ -71,7 +71,7 @@ bool GetHead(SqQueue Q, char &e) {
 bool GetTail(SqQueue Q, char &e) {
     //请同学们在此处把该操作补充完整，并调试
     if(Q.front != Q.rear) {
-        e = Q.base[Q.rear - 1];
+        e = Q.base[(Q.rear + MAXSIZE) % MAXSIZE - 1];
         return true;
     } else {
         return false;
@@ -157,6 +157,8 @@ int main() {
     } while(k < 6);
     return 1;
 }
+
+
 
 
 
