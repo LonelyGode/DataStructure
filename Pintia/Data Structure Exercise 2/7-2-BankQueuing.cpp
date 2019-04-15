@@ -1,7 +1,7 @@
 ﻿#include <bits/stdc++.h>
 
 using namespace std;
-#define MAXSIZE 100
+#define MAXSIZE 1000
 
 typedef struct {
     int *base;
@@ -9,13 +9,13 @@ typedef struct {
     int rear;
 } Queue;
 
-void EnQueue(Queue &Q, int item) {
+void EnQueue(Queue &Q, int e) {
     if ((Q.rear + 1) % MAXSIZE == Q.front) {
         cout << "This Queue is full!" << endl;
         return;
     }
-    Q.base[Q.rear] = item;
     Q.rear  = (Q.rear + 1) % MAXSIZE;
+    Q.base[Q.rear] = e;
 }
 
 int isEmpty(Queue &Q) {
@@ -83,6 +83,10 @@ int main() {
     }
     cout << endl;
 }
+
+
+
+
 
 
 
