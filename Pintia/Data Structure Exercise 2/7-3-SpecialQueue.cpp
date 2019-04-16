@@ -42,6 +42,10 @@ void DeQueue(SqQueue &Q) {
 }
 
 void DeleteMid(SqQueue &Q) {
+    if(Q.front == Q.rear) {
+        cout << "Empty Queue" << endl;
+        return;
+    }
     int mid;
     if(Q.rear % 2) {
         mid = (Q.rear + 1) / 2;
@@ -93,4 +97,5 @@ int main() {
         PrintQueue(Q);
     }
 }
+
 
