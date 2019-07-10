@@ -83,57 +83,36 @@ int main() {
     Sqlist L;       //定义顺序表变量L
     int n, e, pos, flag;
     InitList(L);    //初始化顺序表L
-    cout << "顺序表L初始化成功" << endl;
-    cout << "请输入要创建的顺序表的长度" << endl;
+    cout << "Sequence table L initialized successfully!" << endl;
+    cout << "Please enter the length of the sequence table to be created:";
     cin >> n;      //变量n表示要输入到顺序表中的元素个数
     CreateList(L, n);  //向L中填充n个随机整数
-    cout << "顺序表L创建成功，表中元素为：" << endl;
+    cout << "The sequence table L is created successfully, and the elements in the table are:" << endl;
     PrintList(L);      //输出顺序表L中的元素
-    cout << "请输入要查找的元素的值" << endl;
+    cout << "Please enter the value of the element you are looking for:";
     cin >> e;         //变量e表示要查找的元素
     pos = LocateElem(L, e); //在L中查找元素e的位置，pos表示查找结果，或为0，或为非零值
-    cout << "元素" << e << "在表中的位序为" << pos << endl;
-    cout << "请输入插入位置及插入的值" << endl;
+    cout << "The order of the element " << e << " in the table is:" << pos << endl;
+    cout << "Please enter the insertion position and the inserted value:";
     cin >> pos >> e;  //输入向L中插入元素的位置及值
     flag = ListInsert(L, pos, e); //在顺序表L的第pos个位置插入值e,flag表示插入操作结果，或为true,或为false
     if(flag) {     //判断插入操作是否成功
-        cout << "插入操作成功，表中元素为：" << endl;
+        cout << "The insert operation succeeded and the elements in the table are:" << endl;
         PrintList(L);     //输出插入操作成功后，L中的值
     } else
-        cout << "插入失败！" << endl;
+        cout << "Insert failed!" << endl;
 
-    cout << "请输入删除元素的位置" << endl;
+    cout << "Please enter the location of the deleted element:";
     cin >> pos;     //输入删除位置
     flag = ListDelete(L, pos, e); //删除顺序表L中第pos个元素，被删元素的值用e返回，flag表示删除操作结果，或为true,或为false
     if(flag) {     //判断删除操作是否成功
-        cout << "删除操作成功，被删元素为：" << e << "表中元素为：" << endl; //输出被删元素的值
+        cout << "The delete operation succeeds. The deleted elements are: " << e << "The elements in the table are:" << endl; //输出被删元素的值
         PrintList(L);   //输出删除操作成功后，L中的值
     } else
-        cout << "删除位置错误，操作失败！" << endl;
+        cout << "The deletion location is wrong and the operation failed!" << endl;
 
     return 1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

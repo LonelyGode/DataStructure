@@ -1,37 +1,37 @@
 /*
-	±¾ÊµÑéÖ÷ÒªÊµÏÖ¶ş²æÊ÷µÄ»ù±¾²Ù×÷£¬¶ş²æÊ÷ÖĞ½áµãÖµµÄÀàĞÍÎªchar
-	±¾ÊµÑéÖ÷ÒªÊµÏÖ5¸ö²Ù×÷£º
-	1¡¢void CreatBitree(BiTree &T)  //ÊäÈë¶ş²æÊ÷µÄÏÈĞò±éÀúĞòÁĞ£¨¿ÕÊ÷ÓÃ×Ö·û'#'±íÊ¾£©£¬´´½¨¶ş²æÁ´±íT
-	2¡¢void InOrderTraverse(BiTree T)   //ÖĞĞò±éÀú¶ş²æÊ÷T
-	3¡¢void PreOrderTraverse(BiTree T)  //ÏÈĞò±éÀú¶ş²æÊ÷T
-	4¡¢void PostOrderTraverse(BiTree T)  //ºóĞò±éÀú¶ş²æÊ÷T
-	5¡¢bool SearchTree(BiTree T,char ch,BiTree &p)  //ÔÚ¶ş²æÊ÷TÖĞ²éÕÒÖµÎªchµÄ½áµã£¬²éÕÒ³É¹¦£¬º¯Êı·µ»Øtrue,pÖ¸Ïò¸Ã½áµã,·ñÔòº¯Êı·µ»Øfalse£¬pÎª¿Õ
-	6¡¢int Depth(BiTree T) //Çó¶ş²æÊ÷TµÄÉî¶È
-	7¡¢int NodeCount(BiTree T)  //Çó¶ş²æÊ÷TÖĞ½áµãµÄ¸öÊı
-	8¡¢int LeafCount(BiTree T)  //Çó¶ş²æÊ÷TÖĞÒ¶×Ó½áµãµÄÊıÁ¿
-	9¡¢int NodeCount1(BiTree T)  //Çó¶ş²æÊ÷TÖĞ¶ÈÎª1µÄ½áµãµÄÊıÁ¿
-	10¡¢int NodeCount2(BiTree T)   //Çó¶ş²æÊ÷TÖĞ¶ÈÎª2µÄ½áµãµÄÊıÁ¿
-	11¡¢int Width(BiTree T)   //Çó¶ş²æÊ÷TµÄ¿í¶È
+	æœ¬å®éªŒä¸»è¦å®ç°äºŒå‰æ ‘çš„åŸºæœ¬æ“ä½œï¼ŒäºŒå‰æ ‘ä¸­ç»“ç‚¹å€¼çš„ç±»å‹ä¸ºchar
+	æœ¬å®éªŒä¸»è¦å®ç°5ä¸ªæ“ä½œï¼š
+	1ã€void CreatBitree(BiTree &T)  //è¾“å…¥äºŒå‰æ ‘çš„å…ˆåºéå†åºåˆ—ï¼ˆç©ºæ ‘ç”¨å­—ç¬¦'#'è¡¨ç¤ºï¼‰ï¼Œåˆ›å»ºäºŒå‰é“¾è¡¨T
+	2ã€void InOrderTraverse(BiTree T)   //ä¸­åºéå†äºŒå‰æ ‘T
+	3ã€void PreOrderTraverse(BiTree T)  //å…ˆåºéå†äºŒå‰æ ‘T
+	4ã€void PostOrderTraverse(BiTree T)  //ååºéå†äºŒå‰æ ‘T
+	5ã€bool SearchTree(BiTree T,char ch,BiTree &p)  //åœ¨äºŒå‰æ ‘Tä¸­æŸ¥æ‰¾å€¼ä¸ºchçš„ç»“ç‚¹ï¼ŒæŸ¥æ‰¾æˆåŠŸï¼Œå‡½æ•°è¿”å›true,pæŒ‡å‘è¯¥ç»“ç‚¹,å¦åˆ™å‡½æ•°è¿”å›falseï¼Œpä¸ºç©º
+	6ã€int Depth(BiTree T) //æ±‚äºŒå‰æ ‘Tçš„æ·±åº¦
+	7ã€int NodeCount(BiTree T)  //æ±‚äºŒå‰æ ‘Tä¸­ç»“ç‚¹çš„ä¸ªæ•°
+	8ã€int LeafCount(BiTree T)  //æ±‚äºŒå‰æ ‘Tä¸­å¶å­ç»“ç‚¹çš„æ•°é‡
+	9ã€int NodeCount1(BiTree T)  //æ±‚äºŒå‰æ ‘Tä¸­åº¦ä¸º1çš„ç»“ç‚¹çš„æ•°é‡
+	10ã€int NodeCount2(BiTree T)   //æ±‚äºŒå‰æ ‘Tä¸­åº¦ä¸º2çš„ç»“ç‚¹çš„æ•°é‡
+	11ã€int Width(BiTree T)   //æ±‚äºŒå‰æ ‘Tçš„å®½åº¦
 */
 #include <iostream>
 #include <stdlib.h>
 
 using namespace std;
-//¶ş²æÁ´±í½á¹¹
+//äºŒå‰é“¾è¡¨ç»“æ„
 typedef struct BiTNode {
-    char data;      //Êı¾İÓò,´æ·Å½áµãÖµ
-    struct BiTNode *lchild, *rchild; //×óÓÒº¢×ÓÖ¸Õë
-} BiTNode, *BiTree; // ¶ş²æÁ´±í
+    char data;      //æ•°æ®åŸŸ,å­˜æ”¾ç»“ç‚¹å€¼
+    struct BiTNode *lchild, *rchild; //å·¦å³å­©å­æŒ‡é’ˆ
+} BiTNode, *BiTree; // äºŒå‰é“¾è¡¨
 
 typedef struct {
-    char *base;   //Õ»µ×Ö¸Õë,Õ»ÖĞÔªËØÎª×Ö·û
-    char *top;    //Õ»¶¥Ö¸Õë
-    int stacksize;   //Õ»¿ÉÓÃµÄ×î´óÈİÁ¿
-} SqStack;      //Ë³ĞòÕ»½á¹¹
+    char *base;   //æ ˆåº•æŒ‡é’ˆ,æ ˆä¸­å…ƒç´ ä¸ºå­—ç¬¦
+    char *top;    //æ ˆé¡¶æŒ‡é’ˆ
+    int stacksize;   //æ ˆå¯ç”¨çš„æœ€å¤§å®¹é‡
+} SqStack;      //é¡ºåºæ ˆç»“æ„
 
-//ÊäÈë¶ş²æÊ÷µÄÏÈĞò±éÀúĞòÁĞ£¨¿ÕÊ÷ÓÃ×Ö·û'#'±íÊ¾£©£¬´´½¨¶ş²æÁ´±íT
+//è¾“å…¥äºŒå‰æ ‘çš„å…ˆåºéå†åºåˆ—ï¼ˆç©ºæ ‘ç”¨å­—ç¬¦'#'è¡¨ç¤ºï¼‰ï¼Œåˆ›å»ºäºŒå‰é“¾è¡¨T
 void CreatBitree(BiTree &T) {
-    //ÇëÍ¬Ñ§ÃÇ²¹³ä´Ë²Ù×÷
+    //è¯·åŒå­¦ä»¬è¡¥å……æ­¤æ“ä½œ
     char ch;
     cin >> ch;
     if(ch == '#') {
@@ -44,15 +44,15 @@ void CreatBitree(BiTree &T) {
     }
 }
 
-//Çó¶ş²æÊ÷TÖĞÖµÎªchµÄ½áµãµÄ²ã´Î£¬½á¹ûÓÃp±íÊ¾£¬curlevel±íÊ¾µ±Ç°TËùÔÚµÄ²ãÊı£¬
-//ÇóÖµ³É¹¦·µ»Øtrue,Ê§°Ü·µ»Øfalse
+//æ±‚äºŒå‰æ ‘Tä¸­å€¼ä¸ºchçš„ç»“ç‚¹çš„å±‚æ¬¡ï¼Œç»“æœç”¨pè¡¨ç¤ºï¼Œcurlevelè¡¨ç¤ºå½“å‰Tæ‰€åœ¨çš„å±‚æ•°ï¼Œ
+//æ±‚å€¼æˆåŠŸè¿”å›true,å¤±è´¥è¿”å›false
 bool level(BiTree T, char ch, int curlevel, int &p) {
-    if(T == NULL) //ÈôTÎª¿ÕÊ÷£¬·µ»Øfalse
+    if(T == NULL) //è‹¥Tä¸ºç©ºæ ‘ï¼Œè¿”å›false
         return false;
-    if(T->data == ch) { //ÈôTµÄÖµÎªch,Ôò½áµã²ãÊıpÎªcurlevel
+    if(T->data == ch) { //è‹¥Tçš„å€¼ä¸ºch,åˆ™ç»“ç‚¹å±‚æ•°pä¸ºcurlevel
         p = curlevel;
         return true;
-    } else { //ÈôTµÄÖµÎªch,ÔòÏÈÔÚTµÄ×ó×ÓÊ÷ÖĞÇóch½áµãµÄ²ãÊı£¬Èôch½áµã²»ÔÚTµÄ×ó×ÓÊ÷ÖĞ£¬ÔÙÔÚTµÄÓÒ×ÓÊ÷ÖĞÇóch½áµãµÄ²ãÊı
+    } else { //è‹¥Tçš„å€¼ä¸ºch,åˆ™å…ˆåœ¨Tçš„å·¦å­æ ‘ä¸­æ±‚chç»“ç‚¹çš„å±‚æ•°ï¼Œè‹¥chç»“ç‚¹ä¸åœ¨Tçš„å·¦å­æ ‘ä¸­ï¼Œå†åœ¨Tçš„å³å­æ ‘ä¸­æ±‚chç»“ç‚¹çš„å±‚æ•°
         if(level(T->lchild, ch, curlevel + 1, p))
             return true;
         else
@@ -60,28 +60,28 @@ bool level(BiTree T, char ch, int curlevel, int &p) {
     }
 }
 
-//ÔÚ¶ş²æÊ÷TÖĞÇóÖµÎªchµÄ½áµãµÄ×æÏÈ,³É¹¦·µ»Øtrue,Ê§°Ü·µ»Øfalse
+//åœ¨äºŒå‰æ ‘Tä¸­æ±‚å€¼ä¸ºchçš„ç»“ç‚¹çš„ç¥–å…ˆ,æˆåŠŸè¿”å›true,å¤±è´¥è¿”å›false
 bool ancestor(BiTree T, char ch) {
-    if(T == NULL) //TÎª¿ÕÊ÷Ê±£¬·µ»Øfalse
+    if(T == NULL) //Tä¸ºç©ºæ ‘æ—¶ï¼Œè¿”å›false
         return false;
-    else if(T->lchild && T->lchild->data == ch ) { //ÈôTµÄ×óº¢×ÓÖµÎªch£¬ÔòTÎªch½áµãµÄ×æÏÈ£¬Êä³öT½áµã£¬·µ»Øtrue
+    else if(T->lchild && T->lchild->data == ch ) { //è‹¥Tçš„å·¦å­©å­å€¼ä¸ºchï¼Œåˆ™Tä¸ºchç»“ç‚¹çš„ç¥–å…ˆï¼Œè¾“å‡ºTç»“ç‚¹ï¼Œè¿”å›true
         cout << T->data << " ";
         return true;
-    } else if(T->rchild && T->rchild->data == ch) { //ÈôTµÄÓÒº¢×ÓÖµÎªch£¬ÔòTÎªch½áµãµÄ×æÏÈ£¬Êä³öT½áµã,·µ»Øtrue
+    } else if(T->rchild && T->rchild->data == ch) { //è‹¥Tçš„å³å­©å­å€¼ä¸ºchï¼Œåˆ™Tä¸ºchç»“ç‚¹çš„ç¥–å…ˆï¼Œè¾“å‡ºTç»“ç‚¹,è¿”å›true
         cout << T->data << " ";
         return true;
     }
-    //ÈôTµÄ×óº¢×ÓÖµÊÇch½áµãµÄ×æÏÈ£¬ÔòTÒ²ÊÇchµÄ×æÏÈ£¬Êä³öT½áµã£¬·µ»Øtrue
+    //è‹¥Tçš„å·¦å­©å­å€¼æ˜¯chç»“ç‚¹çš„ç¥–å…ˆï¼Œåˆ™Tä¹Ÿæ˜¯chçš„ç¥–å…ˆï¼Œè¾“å‡ºTç»“ç‚¹ï¼Œè¿”å›true
     else if(ancestor(T->lchild, ch) || ancestor(T->rchild, ch)) {
         cout << T->data << " ";
         return true;
-    } else //ÆäËüÇé¿öÊ±£¬²»ÄÜÇóÖµÎªchµÄ½áµã×æÏÈ£¬´ËÊ±ÖµÎªchµÄ½áµã»òÕßÎª¸ù½áµã£¬»òÕß²»´æÔÚ£¬·µ»Øfalse
+    } else //å…¶å®ƒæƒ…å†µæ—¶ï¼Œä¸èƒ½æ±‚å€¼ä¸ºchçš„ç»“ç‚¹ç¥–å…ˆï¼Œæ­¤æ—¶å€¼ä¸ºchçš„ç»“ç‚¹æˆ–è€…ä¸ºæ ¹ç»“ç‚¹ï¼Œæˆ–è€…ä¸å­˜åœ¨ï¼Œè¿”å›false
         return false;
 }
 
-//ÖĞĞò±éÀú¶ş²æÊ÷T£¬Êä³öÆäÖĞĞò±éÀúĞòÁĞ
+//ä¸­åºéå†äºŒå‰æ ‘Tï¼Œè¾“å‡ºå…¶ä¸­åºéå†åºåˆ—
 void InOrderTraverse(BiTree T) {
-    //ÇëÍ¬Ñ§ÃÇ²¹³ä´Ë²Ù×÷
+    //è¯·åŒå­¦ä»¬è¡¥å……æ­¤æ“ä½œ
     if(T) {
         InOrderTraverse(T->lchild);
         cout << T->data << " ";
@@ -89,9 +89,9 @@ void InOrderTraverse(BiTree T) {
     }
 }
 
-//ÏÈĞò±éÀú¶ş²æÊ÷T£¬Êä³öÆäÏÈĞò±éÀúĞòÁĞ
+//å…ˆåºéå†äºŒå‰æ ‘Tï¼Œè¾“å‡ºå…¶å…ˆåºéå†åºåˆ—
 void PreOrderTraverse(BiTree T) {
-    //ÇëÍ¬Ñ§ÃÇ²¹³ä´Ë²Ù×÷
+    //è¯·åŒå­¦ä»¬è¡¥å……æ­¤æ“ä½œ
     if(T) {
         cout << T->data << " ";
         PreOrderTraverse(T->lchild);
@@ -99,9 +99,9 @@ void PreOrderTraverse(BiTree T) {
     }
 }
 
-//ºóĞò±éÀú¶ş²æÊ÷T£¬Êä³öÆäºóĞò±éÀúĞòÁĞ
+//ååºéå†äºŒå‰æ ‘Tï¼Œè¾“å‡ºå…¶ååºéå†åºåˆ—
 void PostOrderTraverse(BiTree T) {
-    //ÇëÍ¬Ñ§ÃÇ²¹³ä´Ë²Ù×÷
+    //è¯·åŒå­¦ä»¬è¡¥å……æ­¤æ“ä½œ
     if(T) {
         PostOrderTraverse(T->lchild);
         PostOrderTraverse(T->rchild);
@@ -109,9 +109,9 @@ void PostOrderTraverse(BiTree T) {
     }
 }
 
-//ÔÚ¶ş²æÊ÷TÖĞ²éÕÒÖµÎªchµÄ½áµã£¬²éÕÒ³É¹¦£¬º¯Êı·µ»Øtrue,pÖ¸Ïò¸Ã½áµã,·ñÔòº¯Êı·µ»Øfalse£¬pÎª¿Õ
+//åœ¨äºŒå‰æ ‘Tä¸­æŸ¥æ‰¾å€¼ä¸ºchçš„ç»“ç‚¹ï¼ŒæŸ¥æ‰¾æˆåŠŸï¼Œå‡½æ•°è¿”å›true,pæŒ‡å‘è¯¥ç»“ç‚¹,å¦åˆ™å‡½æ•°è¿”å›falseï¼Œpä¸ºç©º
 bool SearchTree(BiTree T, char ch, BiTree &p) {
-    //ÇëÍ¬Ñ§ÃÇ²¹³ä´Ë²Ù×÷
+    //è¯·åŒå­¦ä»¬è¡¥å……æ­¤æ“ä½œ
     if(T) {
         SearchTree(T->lchild, ch, p);
         if(ch == T->data) {
@@ -120,15 +120,15 @@ bool SearchTree(BiTree T, char ch, BiTree &p) {
         SearchTree(T->rchild, ch, p);
     }
     if(p) {
-        return true;  //²¹³äÍê¸Ã²Ù×÷ºó£¬ÇëĞŞ¸Ä´ËĞĞ´úÂë
+        return true;  //è¡¥å……å®Œè¯¥æ“ä½œåï¼Œè¯·ä¿®æ”¹æ­¤è¡Œä»£ç 
     } else {
         return false;
     }
 }
 
-//Çó¶ş²æÊ÷TµÄÉî¶È
+//æ±‚äºŒå‰æ ‘Tçš„æ·±åº¦
 int Depth(BiTree T) {
-    //ÇëÍ¬Ñ§ÃÇ²¹³ä´Ë²Ù×÷
+    //è¯·åŒå­¦ä»¬è¡¥å……æ­¤æ“ä½œ
     if(!T) {
         return 0;
     } else {
@@ -142,62 +142,62 @@ int Depth(BiTree T) {
     }
 }
 
-//Çó¶ş²æÊ÷TµÄ¿í¶È
+//æ±‚äºŒå‰æ ‘Tçš„å®½åº¦
 int Width(BiTree T) {
-    //ÇëÍ¬Ñ§ÃÇ²¹³ä´Ë²Ù×÷
-    BiTree q[100];  //qÎªÒ»¸öË³Ğò¶ÓÁĞ£¬¶ÓÍ·ºÍ¶ÓÎ²ÎªfrontºÍrear
-    //end¼ÇÂ¼µ±Ç°²ã×îºóÒ»¸ö½áµãµÄÎ»ÖÃ£¬length±íÊ¾µ±Ç°²ãµÄ¿í¶È£¬maxwidth±íÊ¾TµÄ¿í¶È
+    //è¯·åŒå­¦ä»¬è¡¥å……æ­¤æ“ä½œ
+    BiTree q[100];  //qä¸ºä¸€ä¸ªé¡ºåºé˜Ÿåˆ—ï¼Œé˜Ÿå¤´å’Œé˜Ÿå°¾ä¸ºfrontå’Œrear
+    //endè®°å½•å½“å‰å±‚æœ€åä¸€ä¸ªç»“ç‚¹çš„ä½ç½®ï¼Œlengthè¡¨ç¤ºå½“å‰å±‚çš„å®½åº¦ï¼Œmaxwidthè¡¨ç¤ºTçš„å®½åº¦
     int front = 0, rear = 0, end, length = 0, maxwidth = 0;
-    q[rear] = T; //¸ù½áµãÈë¶Ó
+    q[rear] = T; //æ ¹ç»“ç‚¹å…¥é˜Ÿ
     rear++;
-    end = rear; //¼ÇÂ¼µ±Ç°²ã£¨µÚÒ»²ã£©µÄ½áÊøÎ»ÖÃ£¨×îºóÒ»¸ö½áµãµÄÎ»ÖÃ£©
-    while(front != rear) { //µ±¶ÓÁĞ·Ç¿ÕÊ±£¬ÒÀ´Î´¦ÀíÃ¿Ò»²ãÖĞµÄ½áµã
-        if(front < end) //Èôµ±Ç°²ã»¹ÓĞ½áµãÃ»´¦ÀíÍê£¬Ôòµ±Ç°²ã½áµãÊıÔöÒ»
+    end = rear; //è®°å½•å½“å‰å±‚ï¼ˆç¬¬ä¸€å±‚ï¼‰çš„ç»“æŸä½ç½®ï¼ˆæœ€åä¸€ä¸ªç»“ç‚¹çš„ä½ç½®ï¼‰
+    while(front != rear) { //å½“é˜Ÿåˆ—éç©ºæ—¶ï¼Œä¾æ¬¡å¤„ç†æ¯ä¸€å±‚ä¸­çš„ç»“ç‚¹
+        if(front < end) //è‹¥å½“å‰å±‚è¿˜æœ‰ç»“ç‚¹æ²¡å¤„ç†å®Œï¼Œåˆ™å½“å‰å±‚ç»“ç‚¹æ•°å¢ä¸€
             length++;
-        else { //Èôµ±Ç°²ãÖĞ½áµãÒÑ´¦ÀíÍê£¬´ËÊ±£¬µ±Ç°²ãµÄ¿í¶ÈÎªlength
-            maxwidth = max(length, maxwidth); //Çóµ±Ç°¶ş²æÊ÷µÄ×î´ó¿í¶È
-            end = rear; //¼ÇÂ¼ÏÂÒ»²ãµÄ½áÊøÎ»ÖÃ
-            length = 1; //ÖØĞÂÇóÏÂÒ»²ã¿í¶ÈÇ°£¬½«lengthÖØÖÃÎªÒ»
+        else { //è‹¥å½“å‰å±‚ä¸­ç»“ç‚¹å·²å¤„ç†å®Œï¼Œæ­¤æ—¶ï¼Œå½“å‰å±‚çš„å®½åº¦ä¸ºlength
+            maxwidth = max(length, maxwidth); //æ±‚å½“å‰äºŒå‰æ ‘çš„æœ€å¤§å®½åº¦
+            end = rear; //è®°å½•ä¸‹ä¸€å±‚çš„ç»“æŸä½ç½®
+            length = 1; //é‡æ–°æ±‚ä¸‹ä¸€å±‚å®½åº¦å‰ï¼Œå°†lengthé‡ç½®ä¸ºä¸€
         }
-        BiTNode *s = q[front]; //¶ÓÍ·½áµã³ö¶Ó£¬ÓÃs±íÊ¾¸Ã½áµã
+        BiTNode *s = q[front]; //é˜Ÿå¤´ç»“ç‚¹å‡ºé˜Ÿï¼Œç”¨sè¡¨ç¤ºè¯¥ç»“ç‚¹
         front++;
-        if(s->lchild) { //ÈôsÓĞ×óº¢×Ó£¬ÔòÁíÆä×óº¢×ÓÈë¶Ó
+        if(s->lchild) { //è‹¥sæœ‰å·¦å­©å­ï¼Œåˆ™å¦å…¶å·¦å­©å­å…¥é˜Ÿ
             q[rear] = s->lchild;
             rear++;
         }
-        if(s->rchild) { //ÈôsÓĞÓÒº¢×Ó£¬ÔòÁíÆäÓÒº¢×ÓÈë¶Ó
+        if(s->rchild) { //è‹¥sæœ‰å³å­©å­ï¼Œåˆ™å¦å…¶å³å­©å­å…¥é˜Ÿ
             q[rear] = s->rchild;
             rear++;
         }
     }
-    maxwidth = max(length, maxwidth); //µ±¶ÓÁĞÎª¿ÕÊ±£¬²»ÒªÍüÁËÇó×îºóÒ»²ãµÄ¿í¶È£¬ÒÔ»ñÈ¡×îÖÕµÄmaxwidth
-    return maxwidth; //·µ»ØÇóµÃµÄ¶ş²æÊ÷µÄ¿í¶È
+    maxwidth = max(length, maxwidth); //å½“é˜Ÿåˆ—ä¸ºç©ºæ—¶ï¼Œä¸è¦å¿˜äº†æ±‚æœ€åä¸€å±‚çš„å®½åº¦ï¼Œä»¥è·å–æœ€ç»ˆçš„maxwidth
+    return maxwidth; //è¿”å›æ±‚å¾—çš„äºŒå‰æ ‘çš„å®½åº¦
 }
 
-//¶ÔÒÔTÎª¸ùµÄ¶ş²æÊ÷½øĞĞ²ãĞò±éÀú£¬Ğè½èÖú¶ÓÁĞ
+//å¯¹ä»¥Tä¸ºæ ¹çš„äºŒå‰æ ‘è¿›è¡Œå±‚åºéå†ï¼Œéœ€å€ŸåŠ©é˜Ÿåˆ—
 void LevelTraverse(BiTree T) {
-    BiTree q[100];  //¶¨ÒåË³Ğò¶ÓÁĞq,¶ÓÍ·Îªfront,¶ÓÎ²Îªrear
+    BiTree q[100];  //å®šä¹‰é¡ºåºé˜Ÿåˆ—q,é˜Ÿå¤´ä¸ºfront,é˜Ÿå°¾ä¸ºrear
     int front = 0, rear = 0;
-    q[rear] = T; //¸ù½áµãÈë¶Ó
+    q[rear] = T; //æ ¹ç»“ç‚¹å…¥é˜Ÿ
     rear++;
-    while(front != rear) { //µ±¶ÓÁĞ·Ç¿ÕÊ±£¬ÒÀ´ÎÉ¾³ı¶ÓÍ·ÔªËØ²¢Êä³ö£¬ÔÙÁíÆäº¢×ÓÒÀ´ÎÈë¶Ó
-        BiTNode *s = q[front]; //É¾³ı¶ÓÍ·ÔªËØ£¨s±íÊ¾£©²¢Êä³ö
+    while(front != rear) { //å½“é˜Ÿåˆ—éç©ºæ—¶ï¼Œä¾æ¬¡åˆ é™¤é˜Ÿå¤´å…ƒç´ å¹¶è¾“å‡ºï¼Œå†å¦å…¶å­©å­ä¾æ¬¡å…¥é˜Ÿ
+        BiTNode *s = q[front]; //åˆ é™¤é˜Ÿå¤´å…ƒç´ ï¼ˆsè¡¨ç¤ºï¼‰å¹¶è¾“å‡º
         cout << s->data << " ";
         front++;
-        if(s->lchild) { //ÈôsÓĞ×óº¢×Ó£¬×óº¢×ÓÈë¶Ó
+        if(s->lchild) { //è‹¥sæœ‰å·¦å­©å­ï¼Œå·¦å­©å­å…¥é˜Ÿ
             q[rear] = s->lchild;
             rear++;
         }
-        if(s->rchild) { //ÈôsÓĞÓÒº¢×Ó£¬ÓÒº¢×ÓÈë¶Ó
+        if(s->rchild) { //è‹¥sæœ‰å³å­©å­ï¼Œå³å­©å­å…¥é˜Ÿ
             q[rear] = s->rchild;
             rear++;
         }
     }
 }
 
-//Çó¶ş²æÊ÷TÖĞ½áµã×ÜÊı
+//æ±‚äºŒå‰æ ‘Tä¸­ç»“ç‚¹æ€»æ•°
 int NodeCount(BiTree T) {
-    //ÇëÍ¬Ñ§ÃÇ²¹³ä´Ë²Ù×÷
+    //è¯·åŒå­¦ä»¬è¡¥å……æ­¤æ“ä½œ
     if(!T) {
         return 0;
     } else {
@@ -205,21 +205,21 @@ int NodeCount(BiTree T) {
     }
 }
 
-//Çó¶ş²æÊ÷TÖĞÒ¶×Ó½áµã×ÜÊı
+//æ±‚äºŒå‰æ ‘Tä¸­å¶å­ç»“ç‚¹æ€»æ•°
 int LeafCount(BiTree T) {
-    //ÇëÍ¬Ñ§ÃÇ²¹³ä´Ë²Ù×÷
+    //è¯·åŒå­¦ä»¬è¡¥å……æ­¤æ“ä½œ
     if(!T) {
         return 0;
     }
     if(!T->lchild && !T->rchild) {
         return 1;
     }
-    return LeafCount(T->lchild) + LeafCount(T->rchild); //²¹³äÍê¸Ã²Ù×÷ºó£¬ÇëĞŞ¸Ä´ËĞĞ´úÂë
+    return LeafCount(T->lchild) + LeafCount(T->rchild); //è¡¥å……å®Œè¯¥æ“ä½œåï¼Œè¯·ä¿®æ”¹æ­¤è¡Œä»£ç 
 }
 
-//Çó¶ş²æÊ÷TÖĞ¶ÈÎª1µÄ½áµã×ÜÊı
+//æ±‚äºŒå‰æ ‘Tä¸­åº¦ä¸º1çš„ç»“ç‚¹æ€»æ•°
 int NodeCount1(BiTree T) {
-    //ÇëÍ¬Ñ§ÃÇ²¹³ä´Ë²Ù×÷
+    //è¯·åŒå­¦ä»¬è¡¥å……æ­¤æ“ä½œ
     if(!T) {
         return 0;
     }
@@ -228,12 +228,12 @@ int NodeCount1(BiTree T) {
     } else {
         return NodeCount1(T->lchild) + NodeCount1(T->rchild);
     }
-    //²¹³äÍê¸Ã²Ù×÷ºó£¬ÇëĞŞ¸Ä´ËĞĞ´úÂë
+    //è¡¥å……å®Œè¯¥æ“ä½œåï¼Œè¯·ä¿®æ”¹æ­¤è¡Œä»£ç 
 }
 
-//Çó¶ş²æÊ÷TÖĞ¶ÈÎª2µÄ½áµã×ÜÊı
+//æ±‚äºŒå‰æ ‘Tä¸­åº¦ä¸º2çš„ç»“ç‚¹æ€»æ•°
 int NodeCount2(BiTree T) {
-    //ÇëÍ¬Ñ§ÃÇ²¹³ä´Ë²Ù×÷
+    //è¯·åŒå­¦ä»¬è¡¥å……æ­¤æ“ä½œ
     if(!T) {
         return 0;
     }
@@ -242,37 +242,37 @@ int NodeCount2(BiTree T) {
     } else {
         return NodeCount2(T->lchild) + NodeCount2(T->rchild);
     }
-    //²¹³äÍê¸Ã²Ù×÷ºó£¬ÇëĞŞ¸Ä´ËĞĞ´úÂë
+    //è¡¥å……å®Œè¯¥æ“ä½œåï¼Œè¯·ä¿®æ”¹æ­¤è¡Œä»£ç 
 }
 
 int main() {
-    BiTree T, p = NULL;    //TÎª±¾³ÌĞòÖĞÒª²Ù×÷µÄ¶ş²æÁ´±í
-    char ch;    //ch±íÊ¾ÔÚ¶ş²æÊ÷ÖĞÒª²éÑ¯µÄ½áµã
+    BiTree T, p = NULL;    //Tä¸ºæœ¬ç¨‹åºä¸­è¦æ“ä½œçš„äºŒå‰é“¾è¡¨
+    char ch;    //chè¡¨ç¤ºåœ¨äºŒå‰æ ‘ä¸­è¦æŸ¥è¯¢çš„ç»“ç‚¹
     bool flag;
     cout << "Please enter the binary tree to be created, input in the preamble sequence, empty tree replaced with the character '#':" << endl;
-    CreatBitree(T);  //¸ù¾İÊäÈëµÄ¶ş²æÊ÷ÏÈĞòĞòÁĞ£¬´´½¨¶ş²æÁ´±íT
+    CreatBitree(T);  //æ ¹æ®è¾“å…¥çš„äºŒå‰æ ‘å…ˆåºåºåˆ—ï¼Œåˆ›å»ºäºŒå‰é“¾è¡¨T
     cout << "The result of the sequence traversal is:" << endl;
     LevelTraverse(T);
     cout << endl << "Please enter the node to be queried:";
     cin >> ch;
     int n;
-    level(T, ch, 1, n); //ÇóÖµÎªch½áµãµÄ²ãÊı£¬³õÊ¼Ê±¸ùµÄ²ãÊıÎª1
+    level(T, ch, 1, n); //æ±‚å€¼ä¸ºchç»“ç‚¹çš„å±‚æ•°ï¼Œåˆå§‹æ—¶æ ¹çš„å±‚æ•°ä¸º1
     cout << "The level of the node is:" << n << endl;
     cout << "The ancestor of the node is:";
     flag = ancestor(T, ch);
     if(flag == false) {
         cout << "No ancestor node!" << endl;
     }
-    cout << endl << "The result of the in-order traversal is:£º" << endl;
-    InOrderTraverse(T);      //Êä³ö¶ş²æÊ÷TµÄÖĞĞò±éÀúĞòÁĞ
+    cout << endl << "The result of the in-order traversal is:ï¼š" << endl;
+    InOrderTraverse(T);      //è¾“å‡ºäºŒå‰æ ‘Tçš„ä¸­åºéå†åºåˆ—
     cout << endl << "The preorder traversal result is:" << endl;
-    PreOrderTraverse(T);     //Êä³ö¶ş²æÊ÷TµÄÏÈĞò±éÀúĞòÁĞ
+    PreOrderTraverse(T);     //è¾“å‡ºäºŒå‰æ ‘Tçš„å…ˆåºéå†åºåˆ—
     cout << endl << "The post-order traversal result is:" << endl;
-    PostOrderTraverse(T);    //Êä³ö¶ş²æÊ÷TµÄºóĞò±éÀúĞòÁĞ
+    PostOrderTraverse(T);    //è¾“å‡ºäºŒå‰æ ‘Tçš„ååºéå†åºåˆ—
     cout << endl << "Please enter the node you want to find in the binary tree:";
-    rewind(stdin);   //Çå¿ÕÊäÈë»º³åÇø
+    rewind(stdin);   //æ¸…ç©ºè¾“å…¥ç¼“å†²åŒº
     cin >> ch;
-    flag = SearchTree(T, ch, p); //ÔÚ¶ş²æÊ÷TÖĞ²éÕÒÖµÎªch1µÄ½áµã
+    flag = SearchTree(T, ch, p); //åœ¨äºŒå‰æ ‘Tä¸­æŸ¥æ‰¾å€¼ä¸ºch1çš„ç»“ç‚¹
     if(flag) {
         cout << "Find success in the binary tree!" << endl;
     } else {
@@ -284,6 +284,8 @@ int main() {
     cout << "The number of leaf nodes, the degree of 1 node, and the degree of 2 nodes are:" << LeafCount(T) << "," << NodeCount1(T) << "," << NodeCount2(T) << endl;
     return 0;
 }
+
+
 
 
 
